@@ -4,6 +4,7 @@ import HomePage from './pages/HomePage';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
+import Settings from './pages/Settings';  // Add this import
 import './index.css';
 
 // Main app content with navigation
@@ -32,6 +33,13 @@ function AppContent() {
           return null;
         }
         return <Dashboard navigate={navigate} />;
+      case 'settings':  // Add settings case
+        // Protect settings route
+        if (!user) {
+          setTimeout(() => navigate('login'), 0);
+          return null;
+        }
+        return <Settings navigate={navigate} />;
       default:
         return <HomePage navigate={navigate} user={user} />;
     }

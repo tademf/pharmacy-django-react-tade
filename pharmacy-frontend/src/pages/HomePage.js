@@ -248,14 +248,13 @@ const HomePage = ({ navigate, user: propUser }) => {
                           Dashboard
                         </button>
                         
-                        <button
-                          onClick={handleSettings}
-                          className="w-full px-4 py-2 text-sm text-left text-slate-700 hover:bg-blue-50 hover:text-blue-600 flex items-center gap-3 transition"
-                        >
-                          <Settings className="w-4 h-4" />
-                          Settings
-                        </button>
-                        
+                       <button
+  onClick={() => navigate('settings')}
+  className="flex items-center gap-2 px-3 py-2 text-sm text-slate-600 hover:bg-slate-100 rounded-lg transition"
+>
+  <Settings className="w-4 h-4" />
+  <span>Settings</span>
+</button>
                         <div className="border-t border-slate-100 my-1"></div>
                         
                         <button
